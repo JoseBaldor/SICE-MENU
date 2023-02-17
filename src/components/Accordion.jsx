@@ -1,30 +1,15 @@
-import {
-  IonContent,
-  IonIcon,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonListHeader,
-  IonMenu,
-  IonAccordion,
-  IonAccordionGroup,
-  IonNote,
-} from '@ionic/react';
-
+import { IonAccordion, IonAccordionGroup, IonContent, IonIcon, IonItem, IonLabel, IonList, IonMenu, IonListHeader, IonNote } from "@ionic/react";
 import { topics } from "../data";
-import { useLocation } from 'react-router-dom';
-import './Menu.css';
 
-const Menu: React.FC = () => {
-  const location = useLocation();
+ const Accordion = () => {
 
-  return (
-    <IonMenu contentId="main" type="overlay">
-      <IonContent>
-        <IonList id="inbox-list">
-          <IonListHeader>SICE</IonListHeader>
-          <IonNote>Control Escolar UIIM</IonNote>
-          <IonAccordionGroup>
+	return (
+  <IonMenu contentId="main" type="overlay">
+    <IonContent>
+    <IonList id="inbox-list">
+    <IonListHeader>SICE</IonListHeader>
+    <IonNote>Sistema de Control Escolar</IonNote>
+		<IonAccordionGroup>
           { topics.map((topic, index) => {
 
             return (
@@ -40,7 +25,7 @@ const Menu: React.FC = () => {
 
                     return (
 
-                      <IonItem key={ `option_${ index }_${ index2 }` } routerLink={ `/page/${ option.url }` }>
+                      <IonItem key={ `option_${ index }_${ index2 }` } routerLink={ `/topics/${ option.label }` }>
                         <IonLabel>{ option.label }</IonLabel>
                       </IonItem>
                     );
@@ -51,9 +36,9 @@ const Menu: React.FC = () => {
           })}
         </IonAccordionGroup>
         </IonList>
-      </IonContent>
-    </IonMenu>
-  );
-};
+        </IonContent>
+        </IonMenu>
+	);
+}
 
-export default Menu;
+export default Accordion;
