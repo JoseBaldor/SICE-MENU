@@ -1,0 +1,7 @@
+{
+  "name": "SICE-MENU",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
